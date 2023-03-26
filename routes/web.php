@@ -1,5 +1,6 @@
 <?php
 
+use App\models\servicos;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    $meuPrimeiroServico = new Servicos;
+    $meuPrimeiroServico->nome = "pintura";
+    $meuPrimeiroServico->telefone = "12345";
+    $meuPrimeiroServico->save();
     return view('welcome');
 });
